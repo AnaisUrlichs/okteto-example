@@ -1,9 +1,0 @@
-name: knative-demo
-autocreate: true
-image: okteto/node:14
-command: bash
-sync:
-- .:/usr/src/app
-forward:
-- 9229:9229
-- 8080:8080
