@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: node-application
+  template:
+    metadata:
+      labels:
+        run: node-application
+    spec:
+      containers:
+      - name: node-application
+        image: registry.cloud.okteto.net/anaisurlichs/hello-world:node
+        ports:
+          - containerPort: 8080
+        imagePullPolicy: Always
